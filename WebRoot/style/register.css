@@ -1,0 +1,70 @@
+.register_block{
+position:absolute;
+	width:362px;
+	height:583px;
+}
+
+#registerBlock {
+	position:absolute;
+	left:231px;
+	top:40px;
+	width:362px;
+	height:583px;
+	z-index:1;
+}
+#noButtom {
+	position:absolute;
+	left:314px;
+	top:23px;
+	width:24px;
+	height:26px;
+	z-index:2;
+}
+#apDiv3 {
+	position:absolute;
+	left:108px;
+	top:458px;
+	width:138px;
+	height:36px;
+	z-index:3;
+}
+#inputUserName {
+	position:absolute;
+	left:53px;
+	top:119px;
+	width:241px;
+	height:37px;
+	z-index:4;
+}
+#inputPassword {
+	position:absolute;
+	left:55px;
+	top:198px;
+	width:239px;
+	height:35px;
+	z-index:5;
+}
+#ReinputPassword {
+	position:absolute;
+	left:55px;
+	top:277px;
+	width:239px;
+	height:34px;
+	z-index:6;
+}
+#inputNickname {
+	position:absolute;
+	left:56px;
+	top:356px;
+	width:239px;
+	height:35px;
+	z-index:7;
+}
+
+.register{
+background-color:red;
+}
+.input{
+	width: 246;
+	height: 30;
+}

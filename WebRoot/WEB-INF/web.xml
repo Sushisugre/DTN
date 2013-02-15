@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <welcome-file-list>
+    <welcome-file>nindex.jsp</welcome-file>
+  </welcome-file-list>
+  
+    <filter>
+  	<filter-name>struts2</filter-name>
+  	<filter-class>
+  		org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+  	</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>struts2</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!--  配置Spring容器：指定Spring文件的路径，让spring知道事务管理的bean所在-->
+  <context-param>
+  <param-name>contextConfigLocation</param-name>
+  <!-- /WEB-INF/applicationContext-*.xml,classpath*:applicationContext-*.xml 
+  -->
+  <param-value>/WEB-INF/applicationContext.xml</param-value>
+  </context-param>
+  
+  <!--  在Struts2感知下，Spring容器的加载  -->
+  <listener>
+  <listener-class>
+  org.springframework.web.context.ContextLoaderListener
+  </listener-class>
+  </listener>
+  
+  <!--配置  OpenSessionInViewFilter或OpenSessionInViewInterceptor -->
+  <filter>
+  <filter-name>hibernateFilter</filter-name>
+  <filter-class>
+  org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
+  </filter-class>
+  <!-- singleSession默认为true,若设为false则等于没用OpenSessionInView -->
+  <init-param>
+  <param-name>singleSession</param-name>
+  <param-value>true</param-value>
+  </init-param>
+  </filter>
+  <filter-mapping>
+  <filter-name>hibernateFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!--  Character Encoding 配置  -->
+  <filter>
+  <filter-name>Spring character encoding filter</filter-name>
+  <filter-class>
+  org.springframework.web.filter.CharacterEncodingFilter
+  </filter-class>
+  <init-param>
+  <param-name>encoding</param-name>
+  <param-value>GBK</param-value>
+  </init-param>
+  </filter>
+  <filter-mapping>
+  <filter-name>Spring character encoding filter</filter-name>
+  <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+  
+  
+  
+</web-app>

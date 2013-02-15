@@ -1,0 +1,31 @@
+#yesButtom {
+	position: absolute;
+	left: 170px;
+	top: 239px;
+	width: 148px;
+	height: 51px;
+	z-index: 3;
+}
+
+#inputCatalogName {
+	position: absolute;
+	left: 111px;
+	top: 163px;
+	width: 273px;
+	height: 25px;
+	z-index: 4;
+}
+
+#noButtom {
+	position: absolute;
+	left: 655px;
+	top: 17px;
+	width: 29px;
+	height: 29px;
+	z-index: 5;
+}
+
+.input_catname {
+	width: 276px;
+	height: 35px;
+}

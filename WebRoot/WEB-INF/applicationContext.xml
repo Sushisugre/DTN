@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/note"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="7028012"></property>
+	</bean>
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<!--  Show SQL语句设置  -->
+                <prop  key="hibernate.show_sql">true</prop>
+                <prop  key="hibernate.format_sql">true</prop>			
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+
+           <value>model/User.hbm.xml</value>
+           <value>model/File.hbm.xml</value>
+           <value>model/Catalog.hbm.xml</value>
+           </list>
+		</property>
+		</bean>
+		
+		<!--  spring提供的事务管理的bean  -->
+        <bean  id="transactionManager"
+        class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property  name="sessionFactory" ref="sessionFactory"></property>
+        </bean>
+        
+        <!--  spring提供的  将事务管理  作为切面  作用于目标对象的代理  bean  -->
+       <bean  id="proxyObj"
+       class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" 
+        abstract="true"> 
+         <!-- 这是一个抽象类,只供类(target对象)继承   -->
+        <property  name="transactionManager" ref="transactionManager"  />
+       <property  name="transactionAttributes">
+       <!--下面是配置出管理事务对应的(Dao的)方法  -->
+       <props>
+       <prop  key="up*">PROPAGATION_REQUIRED</prop>
+       </props>
+       </property>
+       </bean>
+
+       <!-- action的注入 -->
+       <bean id="loginAction" class="action.LoginAction" scope="prototype">
+           <property  name="allService"  ref="allService"></property>
+       </bean>
+       
+       <bean id="logoutAction" class="action.LogoutAction" scope="prototype">
+       </bean>
+       
+       <bean id="registerAction" class="action.RegisterAction" 
+         scope="prototype">
+          <property name="allService">
+          <ref bean="allService"/>
+          </property>  
+       </bean>
+       
+       <bean id="userInfoAction" class="action.UserInfoAction" 
+         scope="prototype">
+          <property name="allService">
+          <ref bean="allService"/>
+          </property>  
+       </bean>
+       
+       <bean id="addCatalogAction" class="action.AddCatalogAction" 
+         scope="prototype">
+          <property name="allService">
+          <ref bean="allService"/>
+          </property>  
+       </bean>
+       
+       <bean id="initCatalogAction" class="action.InitCatalogAction" 
+         scope="prototype">
+          <property name="allService">
+          <ref bean="allService"/>
+          </property>  
+       </bean>
+       
+       <bean id="createFileAction" class="action.file.CreateFileAction" 
+         scope="prototype">
+          <property name="allService">
+          <ref bean="allService"/>
+          </property>  
+       </bean>
+       
+       <bean id="showFileAction" class="action.file.ShowFileAction" 
+         scope="prototype">
+          <property name="allService">
+          <ref bean="allService"/>
+          </property>  
+       </bean>
+       
+       <bean id="listFileAction" class="action.file.ListFileAction" 
+         scope="prototype">
+          <property name="allService">
+          <ref bean="allService"/>
+          </property>  
+       </bean>
+       
+       <bean id="deleteFileAction" class="action.file.DeleteFileAction" 
+         scope="prototype">
+          <property name="allService">
+          <ref bean="allService"/>
+          </property>  
+       </bean>
+       
+       <!-- service的注入 -->
+       <bean id="userService" class="service.UserService">
+	    <property name="allDAO">
+		   <ref bean="allDAO" />
+	    </property>
+	    </bean>
+       
+       	<bean id="fileService" class="service.FileService">
+	    <property name="allDAO">
+		   <ref bean="allDAO" />
+	    </property>
+	    </bean>
+	    
+	    <bean id="catalogService" class="service.CatalogService">
+	    <property name="allDAO">
+		   <ref bean="allDAO" />
+	    </property>
+	    </bean>
+	
+	
+     	<bean id="allService" class="service.AllService">
+	    <property name="fileService">
+		   <ref bean="fileService" />
+     	</property>
+     	<property name="userService">
+		   <ref bean="userService" />
+     	</property>
+     	<property name="catalogService">
+		   <ref bean="catalogService" />
+     	</property>
+    	</bean>
+	
+
+       <!-- DAO的注入 -->
+       <bean id="allDAO" class="dao.AllDAO">
+        <property name="userDAO">
+           <ref bean="userDAO"/>
+        </property>
+        <property name="fileDAO">
+           <ref bean="fileDAO"/>
+        </property>
+        <property name="catalogDAO">
+           <ref bean="catalogDAO"/>
+        </property>
+       </bean>
+       
+       <bean id="userDAO" class="dao.UserDAO">
+       	<property name="sessionFactory">
+       		<ref bean="sessionFactory" />
+       	</property>
+       </bean>
+       
+       <bean id="fileDAO" class="dao.FileDAO">
+       	<property name="sessionFactory">
+       		<ref bean="sessionFactory" />
+       	</property>
+       </bean>
+       
+       <bean id="catalogDAO" class="dao.CatalogDAO">
+       	<property name="sessionFactory">
+       		<ref bean="sessionFactory" />
+       	</property>
+       </bean>
+       
+       </beans>

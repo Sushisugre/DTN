@@ -1,0 +1,30 @@
+
+
+.pop_container {
+	width: 380px;
+
+}
+
+.pop_header {
+	width: 360px;
+	height: 35px;
+
+}
+
+.pop_form {
+	width: 360px;
+	padding: 0;
+}
+
+.cb_catalog{
+height:30px;
+margin-buttom:0pt;
+}
+.b_catalog{
+	clear:left;
+float:right;
+	margin: 0;
+	padding: 0;
+	
+
+}

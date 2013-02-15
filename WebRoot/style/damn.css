@@ -1,0 +1,8 @@
+.demo{position:relative; height:500px; margin:20px; border:1px dotted #d3d3d3} 
+.note{width:150px; height:150px; position:absolute; margin-top:150px; padding:10px; 
+ overflow:hidden; cursor:move; font-size:16px; line-height:22px; background-color:yellow;} 
+.note span{margin:2px} 
+ 
+.yellow{background-color:#FDFB8C;border:1px solid #DEDC65;} 
+.blue{background-color:#A6E3FC;border:1px solid #75C5E7;} 
+.green{background-color:#A5F88B;border:1px solid #98E775;} 

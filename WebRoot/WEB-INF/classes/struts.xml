@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+
+
+	<package name="login" namespace="/login" extends="struts-default">
+		<action name="login" class="loginAction">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/file</param>
+				<param name="actionName">listFileAction</param>
+				<param name="catalog">user</param>
+			</result>
+			<result name="fail">/nindex.jsp</result>
+		</action>
+
+		<action name="logout" class="logoutAction">
+			<result name="success">/nindex.jsp</result>
+		</action>
+	</package>
+
+
+
+	<package name="register" extends="struts-default">
+		<action name="register" class="registerAction">
+			<result name="success" type="chain">
+				<param name="namespace">/login</param>
+				<param name="actionName">login</param>
+			</result>
+			<result name="input">/nindex.jsp</result>
+		</action>
+		
+		<action name="userInfoAction" class="userInfoAction">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/file</param>
+				<param name="actionName">listFileAction</param>
+				<param name="catalog">user</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="catalog" namespace="/catalog" extends="struts-default">
+		<action name="addCatalogAction" class="addCatalogAction">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/catalog</param>
+				<param name="actionName">initCatalogAction</param>
+				<param name="newCat">true</param>
+			</result>
+		</action>
+
+		<action name="initCatalogAction" class="initCatalogAction">
+			<result name="success">/welcome.jsp</result>
+		</action>
+	</package>
+
+	<package name="file" namespace="/file" extends="struts-default">
+		<action name="createFileAction" class="createFileAction">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/file</param>
+				<param name="actionName">listFileAction</param>
+				<param name="catalog">user</param>
+			</result>
+			<result name="init">/createfile.jsp</result>
+			<result name="failure">/welcome.jsp</result>
+		</action>
+
+		<action name="showFileAction" class="showFileAction">
+			<result name="success">/viewfile.jsp</result>
+		</action>
+
+		<action name="deleteFileAction" class="deleteFileAction">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/file</param>
+				<param name="actionName">listFileAction</param>
+				<param name="catalog">user</param>
+			</result>
+		</action>
+
+		<action name="listFileAction" class="listFileAction">
+			<result name="success" type="chain">
+				<param name="namespace">/catalog</param>
+				<param name="actionName">initCatalogAction</param>
+			</result>
+			<result name="failure">/nindex.jsp</result>
+		</action>
+	</package>
+
+	<!--  处理编码乱码的问题  -->
+	<constant name="struts.i18n.encoding" value="gbk" />
+
+	<!-- 定义struts.objectFactory常量 重要-->
+	<!-- constant name="struts.objectFactory" value="spring" -->
+
+	<!--
+		通过url来匹配action是由spring来生成action， 须在struts.xml中这里配置一个相当于Spring的代理
+		添加StrutsSpringObjectFactory所在的架包struts2-spring-plugin.jar
+		到”~/WEB-INF/lib”下
+	-->
+	<constant name="struts.objectFactory"
+		value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+
+
+	<constant name="struts.custom.i18n.resources" value="messages" />
+	<package name="fileUploadDemo" extends="struts-default">
+		<action name="fileUpload" class="org.qiujy.web.struts2.FileUploadAction">
+			<interceptor-ref name="fileUpload">
+				<!-- 配置允许上传的文件类型，多个用","分隔 -->
+				<param name="allowedTypes">
+					image/bmp,image/png,image/gif,image/jpeg,image/jpg
+              </param>
+				<!-- 配置允许上传的文件大小，单位字节 -->
+				<param name="maximumSize">102400</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />
+			<!-- 动态设置Action中的savePath属性的值 -->
+			<param name="savePath">/upload</param>
+			<result name="input">/index.jsp</result>
+			<result name="success">/showupload.jsp</result>
+		</action>
+	</package>
+
+
+
+</struts>    

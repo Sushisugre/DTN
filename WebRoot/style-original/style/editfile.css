@@ -1,0 +1,92 @@
+@CHARSET "UTF-8";
+
+.container {
+	width: 1250px;
+}
+
+.header {
+	height: 60pt;
+	width: 880pt;
+}
+
+.menu {
+	margin-left: auto;
+	margin-right: auto;
+	width: 880pt;
+	background-color:#C1CDCD;
+}
+
+.main {
+	height: 430pt;
+	width: 880pt;
+}
+
+.sidebar {
+	margin: 2pt;
+	width: 180pt;
+	height: 420pt;
+	float: left;
+	background-color:#E0EEEE;
+}
+
+.content {
+	margin: 2pt;
+	width: 690pt;
+	height: 420pt;
+	float: right;
+}
+
+.footer {
+
+	height: 50pt;
+	width: 880pt;
+
+}
+
+.title,.tag {
+	margin-top: 3pt;
+	margin-bottom: 3pt;
+	float: left;
+	clear: left;
+}
+
+.file_title,.file_tag {
+	float: left;
+	clear: left;
+	margin-left: 10pt;
+	width: 350pt;
+	height: 17pt;
+}
+
+.file_editor {
+	margin-top: auto;
+	clear: left;
+	height: 900pt;
+}
+
+.editor {
+	margin-top: auto;
+	clear: left;
+}
+
+.submit {
+	margin-top: 18pt;
+	margin-bottom: auto;
+	margin-left: 10pt;
+	float: left;
+	height: 25pt;
+	width: 70pt;
+}
+
+.select {
+	margin-left: 10pt;
+	margin-right: 5pt;
+	width: 70pt;
+	float: left;
+}
+
+.label {
+	text-align: left;
+	margin-left: 10pt;
+	float: left;
+}

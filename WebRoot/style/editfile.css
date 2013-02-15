@@ -1,0 +1,257 @@
+@CHARSET "UTF-8";
+
+body {
+	background-image: url(../image/welcome_bg1.jpg);
+	background-repeat: repeat;
+}
+
+#rightpg_div {
+	position: absolute;
+	left: 492px;
+	top: 54px;
+	width: 672px;
+	height: 926px;
+	z-index: 1;
+}
+
+#leftpg_div {
+	position: absolute;
+	left: 202px;
+	top: 54px;
+	width: 309px;
+	height: 927px;
+	z-index: 2;
+}
+
+#bookmarks_div {
+	position: absolute;
+	left: 541px;
+	top: 14px;
+	width: 597px;
+	height: 49px;
+	z-index: 3;
+}
+
+#welcome_title_div {
+	position: absolute;
+	left: 231px;
+	top: 92px;
+	width: 142px;
+	height: 28px;
+	z-index: 4;
+}
+
+#showUserName_div {
+	position: absolute;
+	left: 232px;
+	top: 133px;
+	width: 179px;
+	height: 48px;
+	z-index: 5;
+}
+
+#topCutOff_div {
+	position: absolute;
+	left: 232px;
+	top: 198px;
+	width: 231px;
+	height: 9px;
+	z-index: 6;
+}
+
+#middleCutOff_div {
+	position: absolute;
+	left: 232px;
+	top: 303px;
+	width: 230px;
+	height: 8px;
+	z-index: 7;
+}
+
+#bottomCutOff_div {
+	position: absolute;
+	left: 232px;
+	top: 788px;
+	width: 219px;
+	height: 13px;
+	z-index: 8;
+}
+
+#saveAndCloseButtom_div {
+	position: absolute;
+	left: 235px;
+	top: 229px;
+	width: 176px;
+	height: 45px;
+	z-index: 9;
+}
+
+#newCatalog_div {
+	position: absolute;
+	left: 234px;
+	top: 319px;
+	width: 178px;
+	height: 45px;
+	z-index: 10;
+}
+
+#currentCatalog_div {
+	position: absolute;
+	left: 233px;
+	top: 329px;
+	width: 182px;
+	height: 42px;
+	z-index: 11;
+}
+
+#apDiv1 {
+	position: absolute;
+	left: 231px;
+	top: 20px;
+	width: 213px;
+	height: 47px;
+	z-index: 11;
+}
+
+#currentCatalogContent_div {
+	position: absolute;
+	left: 234px;
+	top: 399px;
+	width: 209px;
+	height: 290px;
+	z-index: 12;
+}
+
+#bottomImage_div {
+	position: absolute;
+	left: 232px;
+	top: 812px;
+	width: 223px;
+	height: 123px;
+	z-index: 13;
+}
+
+#bottomNote {
+	position: absolute;
+	left: 725px;
+	top: 994px;
+	width: 442px;
+	height: 26px;
+	z-index: 14;
+}
+
+#mainContent_div {
+	position: absolute;
+	left: 557px;
+	top: 182px;
+	width: 567px;
+	height: 654px;
+	z-index: 15;
+}
+
+#chooseAuthority {
+	position: absolute;
+	left: 956px;
+	top: 885px;
+	width: 132px;
+	height: 38px;
+	z-index: 16;
+}
+
+#chooseCatalog {
+	position: absolute;
+	left: 656px;
+	top: 885px;
+	width: 144px;
+	height: 43px;
+	z-index: 20;
+}
+
+#titleImg_div {
+	position: absolute;
+	left: 573px;
+	top: 108px;
+	width: 86px;
+	height: 40px;
+	z-index: 17;
+}
+
+#modifyTimeImg_div {
+	position: absolute;
+	left: 830px;
+	top: 107px;
+	width: 165px;
+	height: 43px;
+	z-index: 18;
+}
+
+#apDiv3 {
+	position: absolute;
+	left: 225px;
+	top: 0px;
+	width: 252px;
+	height: 46px;
+	z-index: 19;
+}
+
+#titleImg {
+	position: absolute;
+	left: 564px;
+	top: 110px;
+	width: 85px;
+	height: 38px;
+	z-index: 17;
+}
+
+#titleUnderline {
+	position: absolute;
+	left: 665px;
+	top: 143px;
+	width: 289px;
+	height: 17px;
+	z-index: 18;
+}
+
+#backButtom {
+	position: absolute;
+	left: 234px;
+	top: 723px;
+	width: 215px;
+	height: 46px;
+	z-index: 19;
+}
+
+
+#apDiv5 {
+	position: absolute;
+	left: 563px;
+	top: 883px;
+	width: 64px;
+	height: 35px;
+	z-index: 21;
+}
+
+#apDiv6 {
+	position: absolute;
+	left: 850px;
+	top: 884px;
+	width: 70px;
+	height: 35px;
+	z-index: 22;
+}
+
+.file_title {
+	position: absolute;
+	width: 260px;
+	height: 32px;
+	font-size:25px;
+	left : 665px;
+	top: 110px;
+	left: 665px;
+	z-index: 20;
+}
+
+.select{
+    width: 150px;
+	height: 25px;
+}

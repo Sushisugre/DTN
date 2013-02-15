@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+
+.password,.username,.label{
+
+   text-align: left;
+   margin-left: 10pt;
+   float:left;
+   border-style: none;
+}
+
+.container {
+	width: 1260px;
+}
+
+.header {
+	position: relative;
+	margin-top: 15pt;
+	width: 610pt;
+	height: 60pt;
+	background-image:url(../image/head1.jpg);
+}
+
+.main {
+	height: 260pt;
+	width: 610pt;
+	border-style: none;
+}
+
+.sidebar {
+	margin: 2pt;
+	width: 150pt;
+	height: 250pt;
+	float: right;
+	/*background-color:#C1CDCD;*/
+	background-image:url(../image/right.jpg);
+}
+
+.content {
+	margin: 2pt;
+	width: 450pt;
+	height: 250pt;
+	float: left;
+}
+
+.footer {
+	width: 610pt;
+	height: 30pt;
+	clear: both;
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="DTNote"
+  id="myeclipse.1305432585127"
+  context-root="/DTNote"
+  j2ee-spec="5.0"
+  archive="DTNote.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

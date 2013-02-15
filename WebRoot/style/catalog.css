@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+.name{
+	text-align:center;
+font:黑体;
+font-weight:bolder;
+font-size:30;
+color:#FF8C00;
+}
+
+.catalog{
+height:25;
+}
+
+.logout{
+margin-top:7;
+margin-left:7;
+float:right;
+
+}

@@ -1,0 +1,66 @@
+@CHARSET "UTF-8";
+
+.container {
+	width: 1250px;
+}
+
+.header {
+	height: 60pt;
+	width: 880pt;
+}
+
+.menu {
+	width: 880pt;
+}
+
+.main {
+	height: 430pt;
+	width: 880pt;
+}
+
+.sidebar {
+	margin: 2pt;
+	width: 180pt;
+	height: 420pt;
+	float: left;
+	background-color: #E0EEEE;
+}
+
+.content {
+	margin: 2pt;
+	width: 690pt;
+	height: 420pt;
+	float: right;
+}
+
+.footer {
+	height: 50pt;
+	width: 880pt;
+}
+
+.file_title,.file_info{
+	background-color: #E0EEEE;
+}
+
+.file_title{
+  height:30pt;
+  font-size:20pt;
+}
+
+.file_info{
+tex-align:right;
+}
+
+.file_content {
+	background-color: white;
+	height:320pt;
+	overflow:auto;
+}
+
+.buttons {
+	height: 23pt;
+}
+
+.button {
+	float: left;
+}

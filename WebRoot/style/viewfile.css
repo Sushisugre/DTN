@@ -1,0 +1,85 @@
+@CHARSET "UTF-8";
+
+
+#modifyTime {
+	position:absolute;
+	left:731px;
+	top:181px;
+	width:274px;
+	height:29px;
+	z-index:25;
+}
+
+#middleCutOff_div {
+	position:absolute;
+	left:234px;
+	top:345px;
+	width:230px;
+	height:8px;
+	z-index:7;
+}
+
+#saveAndCloseButtom_div {
+	position:absolute;
+	left:234px;
+	top:219px;
+	width:176px;
+	height:45px;
+	z-index:9;
+}
+
+#currentCatalog_div {
+	position:absolute;
+	left:234px;
+	top:371px;
+	width:182px;
+	height:42px;
+	z-index:11;
+}
+
+#currentCatalogContent_div {
+	position:absolute;
+	left:234px;
+	top:433px;
+	width:214px;
+	height:282px;
+	z-index:12;
+}
+
+#apDiv4 {
+	position:absolute;
+	left:626px;
+	top:184px;
+	width:85px;
+	height:23px;
+	z-index:24;
+}
+
+#mainContent_div{
+overflow:auto;
+	position:absolute;
+	left:557px;
+	top:200px;
+	width:567px;
+	height:654px;
+	z-index:15;
+}
+
+#apDiv2 {
+	position:absolute;
+	left:234px;
+	top:283px;
+	width:212px;
+	height:43px;
+	z-index:23;
+}
+
+.file_title{
+width:500;
+}
+
+.divider{
+border:1px solid gray;
+margin-top:3;
+width:500;
+}

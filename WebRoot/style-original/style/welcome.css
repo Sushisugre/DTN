@@ -1,0 +1,85 @@
+@CHARSET "UTF-8";
+
+.li {
+	
+}
+
+.container {
+	width: 1250px;
+
+}
+
+.header {
+	height: 60pt;
+	width: 880pt;
+	
+}
+
+.menu {
+	height: 22pt;
+	width: 880pt;
+	border-style: none;
+}
+
+.modules {
+	margin:0;
+	margin-left: 13pt;
+	padding:0;
+	float: left;
+	border-style: none;
+	background-image:url(../image/淡绿.jpg);
+}
+
+.module,.b_new_file,.b_upload_file,.b_delete_file {
+
+	float: left;
+	border-style: none;
+
+}
+
+.main {
+	height: 430pt;
+	width: 880pt;
+	border-style: none;
+}
+
+.sidebar {
+	margin: 2pt;
+	width: 180pt;
+	height: 420pt;
+	float: left;
+	background-color: #E0EEEE;
+	border-style: none;
+}
+
+.content {
+	margin: 2pt;
+	width: 690pt;
+	height: 420pt;
+	float: right;
+}
+
+.footer {
+	height: 50pt;
+	width: 880pt;
+}
+
+.user_info {
+	width: 200pt;
+	float: right
+}
+
+.buttons {
+	height: 23pt;
+}
+
+.files_header{
+height:20;
+}
+
+.files {
+	height: 475;
+	 clear : left;
+	overflow: auto;
+	clear: left;
+}

@@ -1,0 +1,70 @@
+@CHARSET "UTF-8";
+
+.password,.username,.label {
+	text-align: left;
+	margin-left: 10pt;
+	float: left;
+	border-style: none;
+}
+
+body {
+	background-color: #FFF;
+	background-image: url(../image/index_background2.jpg);
+	background-repeat: auto;
+	overflow:none;
+}
+
+.logo{
+	left:190;
+position: absolute;
+z-index: 1;
+}
+
+#apDiv1 {
+	position: absolute;
+	top: 132;
+	left: 208;
+	z-index: 2;
+}
+
+.Input_size {
+	font-size: 48px;
+}
+
+.login {
+	position: relative;
+	z-index: 3;
+	top: 203;
+	left: 229;
+}
+
+.input_user,.input_pw {
+	width: 215;
+	height: 29;
+}
+
+.input_pw {
+	margin-left: 36;
+}
+
+.s_login {
+	position: absolute;
+	z-index: 3;
+	top: 54;
+	left: 400;
+}
+
+.register_button {
+	position: relative;
+	top: 209;
+	left: 834;
+	z-index: 3;
+}
+
+body,td,th {
+	color: #D6D6D6;
+}
+
+div {
+	
+}
